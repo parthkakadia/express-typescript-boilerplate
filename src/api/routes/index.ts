@@ -1,9 +1,9 @@
-import Router from "express"
+import Router from 'express'
 
-import homeRouter from "./home"
+import homeRouter from './home'
 
 let router = Router();
 
-router.get('/',homeRouter);
+router.use('/',homeRouter);
 
 export default router
