@@ -5,8 +5,6 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "dev": "export ENV=development;npm run build;node .",
-    "prod": "export ENV=production; npm run build;node .",
     "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -30,7 +30,6 @@ class App {
   }
 
   private mountRoutes(): void {
-    
     this.express.use('/', routes);
   }
 }

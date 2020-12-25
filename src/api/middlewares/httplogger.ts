@@ -8,7 +8,7 @@ let stream = {
     }
 };
 export default morgan(
-  '  :method :url :status :response-time ms - :res[content-length]',
+  ':method :url :status :response-time ms - :res[content-length]',
   {
       stream:stream
   }
