@@ -2,7 +2,7 @@ import express from 'express';
 import compression from 'compression';
 import bodyParser from 'body-parser';
 import helmet from 'helmet';
-import config from './config';
+import {PORT,ENV} from './config';
 
 
 import { routes } from './api';
@@ -11,8 +11,8 @@ class App {
   public express;
   constructor() {
     this.express = express();
-    this.express.set('port', config.PORT);
-    this.express.set('env', config.ENV);
+    this.express.set('port', PORT);
+    this.express.set('env', ENV);
     this.initializeMiddlewares('pre');
     this.mountRoutes();
   }

@@ -8,7 +8,7 @@ if (process.env.LOCAL === 'true') {
   else{
     logger.info('Loaded variables from server');
   }
-export default {
-        PORT: process.env.PORT || 3000,
-        ENV: process.env.ENV || 'development',
-}
+export const 
+PORT= process.env.PORT || 3000,
+ENV= process.env.ENV || 'development',
+DATABASE_URL= process.env.DATABASE_URL || 'mongodb://localhost:27017'
