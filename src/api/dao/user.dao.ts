@@ -1,5 +1,5 @@
 import BaseDAO from './base.dao';
-import {User,IUser} from '../models/';
+import {User} from '../models/';
 
 class UserDAO extends BaseDAO {
 

@@ -4,6 +4,7 @@ import {response} from '../common';
 
 let router = Router();
 
-router.get("/all", userServices.getAllUsers,response);
+router.get('/all', userServices.getAllUsers,response);
+router.post('/:username',userServices.getUserByUsername,response);
 
 export default router;

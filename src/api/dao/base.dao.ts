@@ -1,4 +1,4 @@
-import { Model, Document } from "mongoose";
+import { Model } from "mongoose";
 
 class BaseDAO {
 
@@ -25,7 +25,7 @@ class BaseDAO {
   }
 
   async getByID(id:any){
-    return await this.model.find(id);
+    return await this.model.findOne(id);
   }
 
 }

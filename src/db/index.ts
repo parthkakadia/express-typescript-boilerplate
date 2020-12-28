@@ -5,5 +5,6 @@ export const initDB = async () => {
   await mongoose.connect(DATABASE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useCreateIndex: true,
   });
 };

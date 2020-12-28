@@ -11,6 +11,19 @@ function getAllUsers(req,res,next){
     })
 }
 
+function getUserByUsername(req,res,next){
+    const query = {
+        username:req.params.username
+    }
+    User.getByID(query).then((user)=>{
+        res.body = {
+            user:user
+        }
+        next();
+    })
+}
+
 export default {
-    getAllUsers : getAllUsers
+    getAllUsers : getAllUsers,
+    getUserByUsername : getUserByUsername
 }
