@@ -4,9 +4,9 @@ import {response} from '../common';
 
 let router = Router();
 
-router.post('/add',userServices.createUser,response)
-router.get('/all', userServices.getAllUsers,response);
+router.post('/',userServices.createUser,response)
+router.get('/', userServices.getAllUsers,response);
 router.get('/:username',userServices.getUserByUsername,response);
-router.put('/update',userServices.updateUser,response);
+router.put('/:username',userServices.updateUser,response);
 router.delete('/:username',userServices.deleteUser,response);
 export default router;

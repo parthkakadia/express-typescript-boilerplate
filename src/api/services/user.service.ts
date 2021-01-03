@@ -1,4 +1,4 @@
-import { query } from "express";
+
 import { UserDAO } from "../dao";
 
 const User = new UserDAO();
@@ -15,9 +15,7 @@ const createUser = (req, res, next) => {
 
 const getAllUsers = (req, res, next) => {
   User.getAll().then((users) => {
-    res.body = {
-      users: users,
-    };
+    res.body = users;
     next();
   });
 };
@@ -35,7 +33,9 @@ const getUserByUsername = (req, res, next) => {
 };
 
 const updateUser = (req, res, next) => {
-  const query = req.body;
+  const query = {
+    username:req.params.username
+  };
   User.update(query).then((result) => {
     res.body = {
       message: result.nModified ? "Success" : "Error",
