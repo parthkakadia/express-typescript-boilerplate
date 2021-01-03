@@ -2,9 +2,8 @@ import express from 'express';
 import compression from 'compression';
 import bodyParser from 'body-parser';
 import helmet from 'helmet';
+
 import {PORT,ENV} from './config';
-
-
 import { routes } from './api';
 import {httplogger} from './api/middlewares';
 class App {
