@@ -36,7 +36,7 @@ const updateUser = (req, res, next) => {
   const query = {
     username:req.params.username
   };
-  User.update(query).then((result) => {
+  User.update(query,req.body).then((result) => {
     res.body = {
       message: result.nModified ? "Success" : "Error",
     };

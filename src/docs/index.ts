@@ -26,6 +26,7 @@ export const swaggerDocument: SwaggerDefinition = {
     ],
   paths: {
     '/user': userApi['/user'],
+    '/user/{username}':userApi['/user/{username}']
   },
   components:{
       schemas:{

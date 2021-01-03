@@ -64,4 +64,87 @@ export const userApi = {
       },
     },
   },
+  "/user/{username}": {
+    get: {
+      description: "Returns User with given username.",
+      produces: ["application/json"],
+      operationId: "getUserByUsername",
+      tags: ["User"],
+      parameters: [
+        {
+          name: "username",
+          in: "path",
+          required: true,
+          schema: {
+            type: "string",
+          },
+          description: "username",
+        },
+      ],
+      responses: {
+        200: {
+          description: "user.",
+          schema: {
+            $ref: "#/components/schemas/User",
+          },
+        },
+      },
+    },
+    put: {
+      description: "Update a user.",
+      produces: ["application/json"],
+      operationId: "updateUser",
+      tags: ["User"],
+      parameters: [
+        {
+          name: "username",
+          in: "path",
+          required: true,
+          schema: {
+            type: "string",
+          },
+          description: "username",
+        },
+      ],
+      requestBody: {
+        required: true,
+        description: "User object that needs to be added",
+        content: {
+          "application/x-www-form-urlencoded": {
+            type: "object",
+            schema: {
+              $ref: "#/components/schemas/User",
+            },
+          },
+        },
+      },
+      responses: {
+        200: {
+          description: "User updated.",
+        },
+      },
+    },
+    delete: {
+      description: "Delete a user.",
+      produces: ["application/json"],
+      operationId: "deleteUser",
+      tags: ["User"],
+      parameters: [
+        {
+          name: "username",
+          in: "path",
+          required: true,
+          schema: {
+            type: "string",
+          },
+          description: "username",
+        },
+      ],
+      responses: {
+        200: {
+          description: "User deleted.",
+        },
+      },
+    },
+  },
 };

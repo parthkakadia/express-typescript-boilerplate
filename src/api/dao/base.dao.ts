@@ -12,8 +12,8 @@ class BaseDAO {
    return await this.model.create(obj);
   }
 
-  async update(obj:any){
-    return await this.model.updateOne({_id:obj._id},obj);
+  async update(query:any,obj:any){
+    return await this.model.updateOne(query,obj);
   }
 
   async delete(id:any){
