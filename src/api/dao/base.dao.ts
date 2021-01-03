@@ -13,7 +13,7 @@ class BaseDAO {
   }
 
   async update(obj:any){
-    return await this.model.update({_id:obj._id},obj);
+    return await this.model.updateOne({_id:obj._id},obj);
   }
 
   async delete(id:any){
