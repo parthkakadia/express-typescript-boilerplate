@@ -6,7 +6,7 @@ import helmet from 'helmet';
 import {PORT,ENV} from './config';
 import { routes } from './api';
 import {httplogger} from './api/middlewares';
-import {notFound} from './api/common';
+import {handleError,notFound} from './api/common';
 class App {
   public express;
   constructor() {
@@ -25,9 +25,12 @@ class App {
       this.express.use(httplogger);
       this.express.use(bodyParser.json());  
       this.express.use(bodyParser.urlencoded({ extended: true }));
+      
     }
     if (location === 'post') {
-      this.express.use(notFound);
+      
+      this.express.all('*',notFound);
+      this.express.use(handleError);
     }
   }
 

@@ -1,3 +1,6 @@
+import ErrorHandler,{handleError} from './error.handler';
+
+
 const response = async (req, res, next) => {
   res.status(200).send(res.body);
 };
@@ -12,10 +15,8 @@ const created = async (req, res, errors) => {
   res.status(201);
   res.json(res.body);
 };
-const notFound = async (req, res) => {
-  res.status(404).send({
-    error: "Not Found",
-  });
+const notFound = async (req, res,next) => {
+ next(new ErrorHandler(404,'Not Found'));
 };
 
-export { response, badRequest, created, notFound };
+export { response, badRequest, created, notFound, ErrorHandler,handleError };
