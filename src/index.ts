@@ -1,9 +1,7 @@
-import errorHandler from "errorhandler";
 import app from "./app";
 import { logger } from "./utils";
 import { initDB } from "./db";
 
-app.use(errorHandler());
 
 let server;
 initDB().then(() => {
